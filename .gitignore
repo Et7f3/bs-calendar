@@ -2,3 +2,16 @@ _build
 *.install
 .merlin
 _opam
+
+# BuckleScript / NPM
+node_modules
+package-lock.json
+*.bs.js
+lib/bs
+
+# Generated/Copied code because bsb -clean-world don't remove generated files.
+src/calendar_sig.ml
+src/date_sig.ml
+src/period.ml
+src/time_sig.ml
+src/version.ml
