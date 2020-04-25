@@ -1,0 +1,72 @@
+{
+    "name": "bs-calendar",
+    "namespace": "calendar-lib",
+    "version": "0.1.0",
+    "sources": [{
+        "dir": "src",
+        "generators": [{
+                "name": "gen_src_version_ml",
+                "edge": [
+                    "version.ml", ":"
+                ]
+            },
+            {
+                "name": "interface_only_module",
+                "edge": [
+                    "period.ml", ":", "period.mli"
+                ]
+            },
+            {
+                "name": "interface_only_module",
+                "edge": [
+                    "time_sig.ml", ":", "time_sig.mli"
+                ]
+            },
+            {
+                "name": "interface_only_module",
+                "edge": [
+                    "date_sig.ml", ":", "date_sig.mli"
+                ]
+            },
+            {
+                "name": "interface_only_module",
+                "edge": [
+                    "calendar_sig.ml", ":", "calendar_sig.mli"
+                ]
+            }
+        ],
+        "subdirs": true
+    },
+    {
+        "dir": "ocaml-re/lib",
+        "generator": [{
+            "name": "curl_seq_ml",
+            "edge": [
+                "seq.ml", ":"
+            ]
+        }
+        ]
+    }],
+    "package-specs": {
+        "module": "commonjs",
+        "in-source": true
+    },
+    "suffix": ".bs.js",
+    "bs-dependencies": [],
+    "warnings": {
+        "error": "+101"
+    },
+    "generators": [{
+            "name": "gen_src_version_ml",
+            "command": "node --eval \"require('fs').writeFileSync(process.argv[1], 'let version = \\\"' + require(\\\"../../package.json\\\").version + '\\\"');\" $out"
+        },
+        {
+            "name": "interface_only_module",
+            "command": "node --eval \"require('fs').copyFileSync(process.argv[1], process.argv[2])\" $in $out"
+        },
+        {
+            "name": "curl_seq_ml",
+            "command": "curl https://raw.githubusercontent.com/c-cube/seq/2d608bd49647a4a6d0ec51c61cf63678212ea185/src/seq_redef.ml -o $out"
+        }
+    ]
+}
