@@ -1,0 +1,25 @@
+{
+  "name": "bs-calendar",
+  "version": "1.0.0",
+  "description": "A calendar library for OCaml. [API documentation](https://ocaml-community.github.io/calendar/calendar/CalendarLib/index.html)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocaml-community/calendar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ocaml-community/calendar/issues"
+  },
+  "homepage": "https://github.com/ocaml-community/calendar#readme",
+  "dependencies": {
+    "bs-platform": "^7.2.2"
+  }
+}
